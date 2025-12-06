@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 from datetime import datetime
+import os
 import requests
 
 def generate_log(data):
@@ -22,4 +23,6 @@ def fetch_data():
         return response.json()
     return {}
 
-fetch_data()
+if __name__ == "__main__":
+    post = fetch_data()
+    print("Fetched Post Title:", post.get("title", "No title found")) 
